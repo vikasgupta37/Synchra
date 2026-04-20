@@ -476,3 +476,55 @@ body {
   color: var(--text-primary);
   font-size: 1.05rem;
 }
+
+/* ─── Accessibility ─────────────────────────────────────────────────────── */
+
+/* Screen-reader only — visually hidden but announced by assistive tech */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip to main content link – visible on keyboard focus only */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--accent-cyan);
+  color: var(--bg-dark);
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Keyboard focus ring for all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Make sidebar <button> nav items look like the original <a> items */
+button.nav-item {
+  width: 100%;
+  background: none;
+  text-align: left;
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+}
